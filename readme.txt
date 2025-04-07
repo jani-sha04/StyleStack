@@ -71,3 +71,32 @@
 ---
 
 You’re now ready to run SmartWardrobe! Let me know if you hit any snags.
+
+
+
+summary of the commands step by step
+
+1)mkdir smartwardrobe
+2)cd smartwardrobe
+3)mkdir static
+4)cd static(add the index.html,styles.css,app.js file into this folder)
+5) should look like this 
+ smartwardrobe/
+   ├── app.py
+   ├── static/
+   │   ├── index.html
+   │   ├── styles.css
+   │   └── app.js
+   ├── uploads/  (created automatically by app)
+   └── database/ (created automatically by app)
+6) install the virtual environment 
+run : python -m venv venv (if error install python from their offical website https://www.python.org/downloads/_)
+7) activate the virtual environment 
+run : venv\Scripts\activat
+8) install all the necessasry packeages
+run : pip install flask flask-cors tensorflow opencv-python pillow torch transformers spacy requests pandas scikit-learn werkzeug
+9)train the AI chatbot model 
+run python model.py
+10) run the flask application
+run: python app.py
+11) open "http://localhost:5000/" on your webrowser 
