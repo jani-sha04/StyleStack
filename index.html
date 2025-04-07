@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartWardrobe - AI Wardrobe Organizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tshirt"></i> SmartWardrobe</h1>
+            <p>Your AI-powered wardrobe organizer</p>
+        </header>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <h2>Add New Items</h2>
+                <div class="upload-area" id="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop clothes images or click to upload</p>
+                    <input type="file" id="file-input" accept="image/*" multiple hidden>
+                </div>
+                <button id="upload-btn" class="btn">Upload Images</button>
+                <div id="upload-progress" class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+
+            <div class="wardrobe-view">
+                <h2>My Wardrobe</h2>
+                <div class="filter-controls">
+                    <select id="category-filter">
+                        <option value="all">All Items</option>
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="dresses">Dresses</option>
+                        <option value="outerwear">Outerwear</option>
+                        <option value="shoes">Shoes</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                    <select id="color-filter">
+                        <option value="all">All Colors</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                        <option value="blue">Blue</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select id="season-filter">
+                        <option value="all">All Seasons</option>
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="fall">Fall</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                </div>
+                <div class="wardrobe-grid" id="wardrobe-grid">
+                    <!-- Clothing items will be populated here -->
+                </div>
+            </div>
+
+            <div class="outfit-suggestions">
+                <h2>Outfit Suggestions</h2>
+                <div class="suggestion-options">
+                    <select id="occasion-select">
+                        <option value="casual">Casual</option>
+                        <option value="work">Work</option>
+                        <option value="formal">Formal</option>
+                        <option value="athletic">Athletic</option>
+                    </select>
+                    <input type="date" id="date-select" value="">
+                    <button id="get-suggestions" class="btn">Get Suggestions</button>
+                </div>
+                <div class="outfits-container" id="outfits-container">
+                    <!-- Outfit suggestions will go here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <h3>Style Assistant</h3>
+                <button id="toggle-chatbot" class="toggle-btn">
+                    <i class="fas fa-comments"></i>
+                </button>
+            </div>
+            <div class="chatbot-body" id="chatbot-body">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message assistant">
+                        <div class="message-content">
+                            Hi there! I'm your Style Assistant. Ask me anything about your wardrobe or outfit suggestions!
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Ask something about your wardrobe...">
+                    <button id="send-message" class="btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SmartWardrobe - AI Powered Wardrobe Organization</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

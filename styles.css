@@ -1,0 +1,386 @@
+/* Global Styles */
+:root {
+    --primary-color: #6a5acd;
+    --secondary-color: #9370db;
+    --light-color: #e6e6fa;
+    --dark-color: #483d8b;
+    --text-color: #333;
+    --light-text: #f4f4f4;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: var(--light-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--light-color);
+}
+
+/* Button Styles */
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: var(--radius);
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--dark-color);
+}
+
+/* Main Content Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.upload-section, .wardrobe-view, .outfit-suggestions {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.upload-section {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.wardrobe-view {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.outfit-suggestions {
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+/* Upload Area */
+.upload-area {
+    border: 2px dashed var(--secondary-color);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-area:hover {
+    background-color: var(--light-color);
+}
+
+.upload-area i {
+    font-size: 48px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin: 15px 0;
+    overflow: hidden;
+    display: none;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* Wardrobe Grid */
+.filter-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-controls select {
+    padding: 8px;
+    border-radius: var(--radius);
+    border: 1px solid #ddd;
+    flex-grow: 1;
+}
+
+.wardrobe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.clothing-item {
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.clothing-item:hover {
+    transform: translateY(-5px);
+}
+
+.clothing-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.item-info {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.item-info h4 {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.item-info p {
+    font-size: 12px;
+    color: #666;
+}
+
+.item-actions {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+.item-actions button {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.item-actions button:hover {
+    background-color: white;
+}
+
+/* Outfit Suggestions */
+.suggestion-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.suggestion-options select, .suggestion-options input {
+    padding: 8px;
+    border-radius: var(--radius);
+    border: 1px solid #ddd;
+    flex-grow: 1;
+}
+
+.outfits-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.outfit-card {
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.outfit-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+}
+
+.outfit-item {
+    width: calc(50% - 5px);
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.outfit-info {
+    padding: 10px;
+    background-color: var(--light-color);
+}
+
+/* Chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.chatbot-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chatbot-body {
+    background-color: white;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message.user {
+    align-items: flex-end;
+}
+
+.message.assistant {
+    align-items: flex-start;
+}
+
+.message-content {
+    padding: 10px;
+    border-radius: var(--radius);
+    max-width: 80%;
+}
+
+.user .message-content {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.assistant .message-content {
+    background-color: var(--light-color);
+    color: var(--text-color);
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.chat-input button {
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .upload-section, .wardrobe-view, .outfit-suggestions {
+        grid-column: 1;
+    }
+    
+    .upload-section {
+        grid-row: 1;
+    }
+    
+    .wardrobe-view {
+        grid-row: 2;
+    }
+    
+    .outfit-suggestions {
+        grid-row: 3;
+    }
+    
+    .chatbot-container {
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
